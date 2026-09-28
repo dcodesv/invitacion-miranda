@@ -32,16 +32,24 @@ export const INITIAL_GUESTS = [
 export const EVENT_DETAILS = {
   title: "Miranda's 10th Birthday Celebration! 🎸🖤💖",
   dateStr: "November 15, 2026",
-  dateISO: "2026-11-15T14:00:00",
-  timeStr: "2:00 PM",
+  dateISO: "2026-11-15T13:45:00",
+  timeStr: "1:45 PM",
+  arrivalTimeStr: "1:45 PM",
+  limoDepartureStr: "2:00 PM",
   locationName: "My Home",
   locationCity: "Tomball, TX",
   locationFull: "18610 Porthaven Rose Ln, Tomball, TX 77377-2789",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=18610+PORTHAVEN+ROSE+LN,+TOMBALL,+TX+77377-2789",
   schedule: [
-    { title: "Limo Ride", time: "2:00 PM - 4:00 PM", icon: "limo" },
-    { title: "Pizza Time", time: "4:00 PM onwards", icon: "pizza" }
+    { title: "The VIP Backstage Pass Tour", time: "2:00 PM - 4:00 PM", icon: "limo" },
+    { title: "Backstage party (pizza and cake)", time: "4:00 PM onwards", icon: "pizza" }
   ],
   dressCode: "-",
-  colors: ["Black", "Fuchsia Pink", "Silver", "White"]
+  colors: ["Black", "Fuchsia Pink", "Silver", "White"],
+  rsvpContact: {
+    name: "Andrea",
+    phone: "281-224-9271",
+    telLink: "tel:2812249271",
+    whatsappLink: "https://wa.me/12812249271?text=Hi%20Andrea!%20Confirming%20attendance%20for%20Miranda%27s%2010th%20Birthday%20Celebration%20%F0%9F%8E%B8%F0%9F%92%96"
+  }
 };

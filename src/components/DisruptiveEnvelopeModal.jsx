@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Heart } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { globalAudio } from '../services/audioManager';
 
 import cartonDark from '../images/carton_dark.webp';
 import elemento1 from '../images/elemento1.png'; // Silver star balloon
 import elemento2 from '../images/elemento2.png'; // Pink bow
-import elemento4 from '../images/elemento4.png'; // Disco ball with pink bow
 import elemento5 from '../images/elemento5.png'; // Vinyl record Limited Edition
 import elemento6 from '../images/elemento6.png'; // Electric guitar sticker
 
@@ -31,7 +31,7 @@ export default function DisruptiveEnvelopeModal({ guestName, onOpen }) {
         origin: { x: 0.25, y: 0.5 },
         shapes: customShapes,
         scalar: 3,
-        colors: ['#F472B6', '#EC4899', '#FFFFFF', '#000000', '#A855F7'],
+        colors: ['#FAA3B6', '#F47B95', '#FFFFFF', '#000000', '#FFAFBF'],
       });
 
       // Right burst
@@ -41,7 +41,7 @@ export default function DisruptiveEnvelopeModal({ guestName, onOpen }) {
         origin: { x: 0.75, y: 0.5 },
         shapes: customShapes,
         scalar: 3,
-        colors: ['#F472B6', '#EC4899', '#FFFFFF', '#000000', '#A855F7'],
+        colors: ['#FAA3B6', '#F47B95', '#FFFFFF', '#000000', '#FFAFBF'],
       });
 
       // Center explosion
@@ -52,7 +52,7 @@ export default function DisruptiveEnvelopeModal({ guestName, onOpen }) {
           origin: { x: 0.5, y: 0.4 },
           shapes: customShapes,
           scalar: 3.5,
-          colors: ['#F472B6', '#EC4899', '#FFFFFF', '#000000', '#A855F7'],
+          colors: ['#FAA3B6', '#F47B95', '#FFFFFF', '#000000', '#FFAFBF'],
         });
       }, 200);
     } catch (e) {
@@ -61,6 +61,8 @@ export default function DisruptiveEnvelopeModal({ guestName, onOpen }) {
   };
 
   const handleOpenClick = () => {
+    // Unconditionally unlock and play audio synchronously within user touch/click gesture
+    globalAudio.unlockAndPlay();
     setIsOpening(true);
     triggerRockConfetti();
     setTimeout(() => {
@@ -82,7 +84,7 @@ export default function DisruptiveEnvelopeModal({ guestName, onOpen }) {
           backgroundSize: '400px',
           backgroundPosition: 'center',
         }}
-        className="relative w-full max-w-md rounded-3xl shadow-2xl shadow-pink-500/20 border-4 border-pink-500/80 p-4 sm:p-6 text-center text-slate-100 overflow-visible my-4 font-mansalva bg-zinc-950"
+        className="relative w-full max-w-md rounded-3xl shadow-2xl shadow-rockPink/20 border-4 border-rockPink/80 p-4 sm:p-6 text-center text-slate-100 overflow-visible my-4 font-mansalva bg-zinc-950"
       >
         {/* Floating Star in modal corner */}
         <motion.img
@@ -103,15 +105,15 @@ export default function DisruptiveEnvelopeModal({ guestName, onOpen }) {
         />
 
         {/* Inner Card Container */}
-        <div className="bg-zinc-900/95 rounded-2xl p-5 sm:p-6 border-2 border-pink-500/40 shadow-xl relative z-10 space-y-4">
+        <div className="bg-zinc-900/95 rounded-2xl p-5 sm:p-6 border-2 border-rockPink/40 shadow-xl relative z-10 space-y-4">
 
           {/* Header Title */}
           <div className="space-y-1">
-            <span className="text-xs font-bold text-pink-400 uppercase tracking-widest block">
-              ⚡ YOU'RE INVITED TO MY BIRTHDAY! ⚡
+            <span className="text-xs font-bold text-rockPink uppercase tracking-widest block">
+              ⚡ YOU'RE INVITED TO THE TOUR! ⚡
             </span>
-            <h2 className="text-3xl sm:text-4xl text-white font-extrabold font-mansalva drop-shadow-[0_2px_10px_rgba(244,114,182,0.6)]">
-              Miranda · 10th Birthday
+            <h2 className="text-3xl sm:text-4xl text-white font-extrabold font-mansalva drop-shadow-[0_2px_10px_rgba(250,163,182,0.6)]">
+              Miranda's 10th Birthday Tour
             </h2>
           </div>
 
@@ -136,7 +138,7 @@ export default function DisruptiveEnvelopeModal({ guestName, onOpen }) {
             className="group relative cursor-pointer inline-flex flex-col items-center justify-center my-3 w-full"
           >
             {/* Vinyl & Guitar interactive stage */}
-            <div className="relative flex items-center justify-center w-52 h-52 sm:w-60 sm:h-60 rounded-full bg-gradient-to-b from-pink-500/20 via-black/80 to-purple-950/40 border-2 border-pink-500/40 p-4 shadow-2xl group-hover:border-pink-400 group-hover:shadow-[0_0_25px_rgba(244,114,182,0.5)] transition-all">
+            <div className="relative flex items-center justify-center w-52 h-52 sm:w-60 sm:h-60 rounded-full bg-gradient-to-b from-rockPink-500/20 via-black/80 to-purple-950/40 border-2 border-rockPink/40 p-4 shadow-2xl group-hover:border-rockPink group-hover:shadow-[0_0_25px_rgba(250,163,182,0.5)] transition-all">
               
               {/* Rotating Vinyl Record (Elemento 5) */}
               <motion.div
@@ -164,16 +166,16 @@ export default function DisruptiveEnvelopeModal({ guestName, onOpen }) {
                   repeat: Infinity,
                   ease: 'easeInOut',
                 }}
-                className="absolute -right-2 sm:-right-4 -bottom-1 w-32 sm:w-36 drop-shadow-[0_10px_16px_rgba(244,114,182,0.5)] select-none pointer-events-none group-hover:scale-105 transition-transform"
+                className="absolute -right-2 sm:-right-4 -bottom-1 w-32 sm:w-36 drop-shadow-[0_10px_16px_rgba(250,163,182,0.5)] select-none pointer-events-none group-hover:scale-105 transition-transform"
               />
 
               {/* Central Glow */}
-              <div className="absolute inset-0 rounded-full bg-pink-400/10 blur-xl group-hover:bg-pink-400/20 transition-all pointer-events-none"></div>
+              <div className="absolute inset-0 rounded-full bg-rockPink/10 blur-xl group-hover:bg-rockPink/20 transition-all pointer-events-none"></div>
             </div>
 
             {/* Action Pill Badge */}
-            <div className="flex items-center gap-1.5 text-sm sm:text-base text-pink-200 font-bold mt-4 bg-pink-500/30 px-6 py-2.5 rounded-full border border-pink-400/60 shadow-lg group-hover:bg-pink-500/50 group-hover:text-white group-hover:shadow-pink-500/30 transition-all">
-              <Sparkles className="w-4 h-4 text-pink-400 animate-spin" />
+            <div className="flex items-center gap-1.5 text-sm sm:text-base text-rockPink-200 font-bold mt-4 bg-rockPink-500/30 px-6 py-2.5 rounded-full border border-rockPink-400/60 shadow-lg group-hover:bg-rockPink-500/50 group-hover:text-white group-hover:shadow-rockPink/30 transition-all">
+              <Sparkles className="w-4 h-4 text-rockPink animate-spin" />
               <span>Tap here to open your invitation! 🎸</span>
             </div>
           </motion.div>

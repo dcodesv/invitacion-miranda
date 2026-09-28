@@ -12,7 +12,6 @@ import mirandaLite from '../images/miranda_lite.webp';
 import elemento1 from '../images/elemento1.png';
 import elemento2 from '../images/elemento2.png';
 import elemento3 from '../images/elemento3.png';
-import elemento4 from '../images/elemento4.png';
 import elemento5 from '../images/elemento5.png';
 import elemento6 from '../images/elemento6.png';
 
@@ -21,7 +20,6 @@ export const ALL_CRITICAL_IMAGES = [
   elemento1,
   elemento2,
   elemento3,
-  elemento4,
   elemento5,
   elemento6,
   cartonDark,

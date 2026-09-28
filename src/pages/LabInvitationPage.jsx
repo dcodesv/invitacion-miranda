@@ -43,7 +43,7 @@ export default function LabInvitationPage() {
     return (
       <DisruptiveAppLoader
         progress={isFinished ? 100 : progress}
-        message={isFinished ? "Ready to rock! 🎸💖✨" : "Loading Miranda's 10th Birthday Experience..."}
+        message={isFinished ? "Tour VIP Passes Unlocked! 🎸💖✨" : "Getting your VIP Tour Passes ready..."}
       />
     );
   }
@@ -51,7 +51,7 @@ export default function LabInvitationPage() {
   return (
     <div className="min-h-screen overflow-hidden pb-12 bg-transparent px-3 sm:px-6 relative">
       {/* Subtle ambient pink glow in background */}
-      <div className="fixed -top-40 -left-40 w-96 h-96 bg-pink-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="fixed -top-40 -left-40 w-96 h-96 bg-rockPink-500/15 rounded-full blur-3xl pointer-events-none"></div>
       <div className="fixed -bottom-40 -right-40 w-96 h-96 bg-fuchsia-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
       {/* Interactive Disruptive Carita Modal Overlay */}

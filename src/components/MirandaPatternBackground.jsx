@@ -2,24 +2,23 @@ import React from 'react';
 import elemento1 from '../images/elemento1.png'; // Estrella plateada
 import elemento2 from '../images/elemento2.png'; // Moño rosa
 import elemento3 from '../images/elemento3.png'; // Corazón rosa metálico
-import elemento4 from '../images/elemento4.png'; // Disco ball con moño
 import elemento5 from '../images/elemento5.png'; // Vinilo
 import elemento6 from '../images/elemento6.png'; // Guitarra eléctrica
 
 export default function MirandaPatternBackground() {
-  // Pre-configured distributed items across the grid for a natural aesthetic wallpaper pattern
+  // Pre-configured distributed items across the grid for a natural aesthetic wallpaper pattern (elements 1, 2, 3, 5, 6)
   const patternItems = [
     // Column 1
     { src: elemento1, alt: 'Estrella', top: '4%', left: '5%', size: 'w-10 sm:w-12', rotate: '-15deg', opacity: 'opacity-40' },
     { src: elemento2, alt: 'Moño', top: '18%', left: '8%', size: 'w-11 sm:w-14', rotate: '12deg', opacity: 'opacity-35' },
     { src: elemento6, alt: 'Guitarra', top: '34%', left: '4%', size: 'w-12 sm:w-16', rotate: '-25deg', opacity: 'opacity-40' },
     { src: elemento3, alt: 'Corazón', top: '48%', left: '7%', size: 'w-10 sm:w-12', rotate: '15deg', opacity: 'opacity-40' },
-    { src: elemento4, alt: 'Disco ball', top: '64%', left: '5%', size: 'w-11 sm:w-14', rotate: '-10deg', opacity: 'opacity-35' },
-    { src: elemento5, alt: 'Vinilo', top: '78%', left: '8%', size: 'w-10 sm:w-12', rotate: '30deg', opacity: 'opacity-35' },
+    { src: elemento5, alt: 'Vinilo', top: '64%', left: '5%', size: 'w-11 sm:w-14', rotate: '-10deg', opacity: 'opacity-35' },
+    { src: elemento2, alt: 'Moño', top: '78%', left: '8%', size: 'w-10 sm:w-12', rotate: '30deg', opacity: 'opacity-35' },
     { src: elemento1, alt: 'Estrella', top: '92%', left: '4%', size: 'w-10 sm:w-12', rotate: '20deg', opacity: 'opacity-35' },
 
     // Intermediate left
-    { src: elemento4, alt: 'Disco ball', top: '10%', left: '16%', size: 'w-9 sm:w-11', rotate: '8deg', opacity: 'opacity-25' },
+    { src: elemento3, alt: 'Corazón', top: '10%', left: '16%', size: 'w-9 sm:w-11', rotate: '8deg', opacity: 'opacity-25' },
     { src: elemento5, alt: 'Vinilo', top: '26%', left: '18%', size: 'w-8 sm:w-10', rotate: '-15deg', opacity: 'opacity-25' },
     { src: elemento1, alt: 'Estrella', top: '42%', left: '15%', size: 'w-9 sm:w-11', rotate: '18deg', opacity: 'opacity-30' },
     { src: elemento2, alt: 'Moño', top: '58%', left: '17%', size: 'w-9 sm:w-12', rotate: '-12deg', opacity: 'opacity-25' },
@@ -29,19 +28,19 @@ export default function MirandaPatternBackground() {
     // Intermediate right
     { src: elemento3, alt: 'Corazón', top: '8%', right: '17%', size: 'w-9 sm:w-11', rotate: '-12deg', opacity: 'opacity-25' },
     { src: elemento6, alt: 'Guitarra', top: '24%', right: '15%', size: 'w-10 sm:w-14', rotate: '28deg', opacity: 'opacity-25' },
-    { src: elemento4, alt: 'Disco ball', top: '40%', right: '18%', size: 'w-9 sm:w-11', rotate: '-20deg', opacity: 'opacity-25' },
+    { src: elemento1, alt: 'Estrella', top: '40%', right: '18%', size: 'w-9 sm:w-11', rotate: '-20deg', opacity: 'opacity-25' },
     { src: elemento5, alt: 'Vinilo', top: '56%', right: '16%', size: 'w-8 sm:w-10', rotate: '15deg', opacity: 'opacity-25' },
-    { src: elemento1, alt: 'Estrella', top: '70%', right: '18%', size: 'w-9 sm:w-11', rotate: '-15deg', opacity: 'opacity-30' },
+    { src: elemento3, alt: 'Corazón', top: '70%', right: '18%', size: 'w-9 sm:w-11', rotate: '-15deg', opacity: 'opacity-30' },
     { src: elemento2, alt: 'Moño', top: '88%', right: '16%', size: 'w-9 sm:w-12', rotate: '10deg', opacity: 'opacity-25' },
 
     // Column right edge
     { src: elemento5, alt: 'Vinilo', top: '3%', right: '6%', size: 'w-10 sm:w-12', rotate: '-20deg', opacity: 'opacity-35' },
-    { src: elemento4, alt: 'Disco ball', top: '16%', right: '5%', size: 'w-11 sm:w-14', rotate: '15deg', opacity: 'opacity-35' },
+    { src: elemento6, alt: 'Guitarra', top: '16%', right: '5%', size: 'w-11 sm:w-14', rotate: '15deg', opacity: 'opacity-35' },
     { src: elemento1, alt: 'Estrella', top: '32%', right: '7%', size: 'w-10 sm:w-12', rotate: '-8deg', opacity: 'opacity-40' },
     { src: elemento2, alt: 'Moño', top: '46%', right: '4%', size: 'w-11 sm:w-14', rotate: '18deg', opacity: 'opacity-35' },
     { src: elemento6, alt: 'Guitarra', top: '62%', right: '6%', size: 'w-12 sm:w-16', rotate: '-22deg', opacity: 'opacity-40' },
     { src: elemento3, alt: 'Corazón', top: '76%', right: '5%', size: 'w-10 sm:w-12', rotate: '12deg', opacity: 'opacity-40' },
-    { src: elemento4, alt: 'Disco ball', top: '90%', right: '7%', size: 'w-10 sm:w-13', rotate: '-10deg', opacity: 'opacity-35' },
+    { src: elemento5, alt: 'Vinilo', top: '90%', right: '7%', size: 'w-10 sm:w-13', rotate: '-10deg', opacity: 'opacity-35' },
   ];
 
   return (

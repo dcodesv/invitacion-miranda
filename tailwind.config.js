@@ -29,6 +29,20 @@ export default {
           DEFAULT: '#FAF8F3',
           dark: '#F0EBE1',
           pure: '#FFFFFF',
+        },
+        rockPink: {
+          50: '#FFF0F3',
+          100: '#FFE4E9',
+          200: '#FFCBD5',
+          300: '#FFAFBF',
+          DEFAULT: '#FAA3B6',
+          400: '#FAA3B6',
+          500: '#F47B95',
+          600: '#E25575',
+          700: '#B83253',
+          800: '#8C1E3A',
+          900: '#541021',
+          950: '#2E0711',
         }
       },
       fontFamily: {
