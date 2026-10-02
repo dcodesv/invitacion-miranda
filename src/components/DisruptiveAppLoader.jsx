@@ -17,13 +17,13 @@ export default function DisruptiveAppLoader({ progress = 0, message = "Getting y
           backgroundSize: '400px',
           backgroundPosition: 'center',
         }}
-        className="relative w-full max-w-sm rounded-3xl shadow-2xl shadow-rockPink/20 border-4 border-rockPink/80 p-6 text-center text-slate-100 overflow-hidden space-y-4 bg-zinc-900"
+        className="relative w-full max-w-sm rounded-3xl shadow-2xl shadow-rockBlue/20 border-4 border-rockBlue/80 p-6 text-center text-slate-100 overflow-hidden space-y-4 bg-zinc-900"
       >
-        <div className="bg-zinc-950/90 rounded-2xl p-5 border-2 border-rockPink/40 shadow-md space-y-4">
+        <div className="bg-zinc-950/90 rounded-2xl p-5 border-2 border-rockBlue/40 shadow-md space-y-4">
 
           {/* Animated Vinyl & Guitar Graphics instead of banner */}
           <div className="relative flex justify-center items-center py-4 min-h-[160px]">
-            <div className="absolute w-32 h-32 rounded-full bg-rockPink-500/15 animate-ping"></div>
+            <div className="absolute w-32 h-32 rounded-full bg-rockBlue-500/15 animate-ping"></div>
 
             {/* Rotating Vinyl Record (Elemento 5) */}
             <motion.div
@@ -50,7 +50,7 @@ export default function DisruptiveAppLoader({ progress = 0, message = "Getting y
                 repeat: Infinity,
                 ease: 'easeInOut',
               }}
-              className="absolute z-20 -bottom-1 -right-1 w-24 h-24 drop-shadow-[0_10px_16px_rgba(250,163,182,0.4)] pointer-events-none"
+              className="absolute z-20 -bottom-1 -right-1 w-24 h-24 drop-shadow-[0_10px_16px_rgba(112,197,248,0.4)] pointer-events-none"
             >
               <img
                 src={elemento6}
@@ -62,32 +62,32 @@ export default function DisruptiveAppLoader({ progress = 0, message = "Getting y
 
           {/* Title */}
           <div className="space-y-1">
-            <div className="flex items-center justify-center gap-1.5 text-rockPink text-xs font-bold uppercase tracking-widest">
+            <div className="flex items-center justify-center gap-1.5 text-rockBlue text-xs font-bold uppercase tracking-widest">
               <Sparkles className="w-3.5 h-3.5" />
               <span>THE OFFICIAL TOUR</span>
               <Sparkles className="w-3.5 h-3.5" />
             </div>
-            <h2 className="text-2xl text-white font-extrabold font-mansalva drop-shadow-[0_2px_8px_rgba(250,163,182,0.6)]">
+            <h2 className="text-2xl text-white font-extrabold font-mansalva drop-shadow-[0_2px_8px_rgba(112,197,248,0.6)]">
               Miranda's 10th Birthday Tour
             </h2>
           </div>
 
           {/* Message */}
-          <p className="text-sm text-rockPink-300 font-bold">
+          <p className="text-sm text-rockBlue-300 font-bold">
             {message}
           </p>
 
           {/* Progress Bar */}
           <div className="space-y-1.5 max-w-xs mx-auto">
-            <div className="w-full h-3 bg-zinc-800 rounded-full overflow-hidden border border-rockPink/40 p-0.5">
+            <div className="w-full h-3 bg-zinc-800 rounded-full overflow-hidden border border-rockBlue/40 p-0.5">
               <div
-                className="h-full bg-gradient-to-r from-rockPink via-rockPink-300 to-rockPink-200 rounded-full transition-all duration-300"
+                className="h-full bg-gradient-to-r from-rockBlue via-rockBlue-300 to-rockBlue-200 rounded-full transition-all duration-300"
                 style={{ width: `${Math.max(10, progress)}%` }}
               ></div>
             </div>
-            <div className="flex justify-between text-xs text-rockPink font-bold px-1">
+            <div className="flex justify-between text-xs text-rockBlue font-bold px-1">
               <span>0% 🎸</span>
-              <span>{progress}% 💖</span>
+              <span>{progress}% 🩵</span>
             </div>
           </div>
 

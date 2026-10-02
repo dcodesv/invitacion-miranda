@@ -1,7 +1,7 @@
 import React from 'react';
 import elemento1 from '../images/elemento1.png'; // Estrella plateada
-import elemento2 from '../images/elemento2.png'; // Moño rosa
-import elemento3 from '../images/elemento3.png'; // Corazón rosa metálico
+import elemento2 from '../images/elemento2.png'; // Moño azul claro
+import elemento3 from '../images/elemento3.png'; // Corazón azul metálico
 import elemento5 from '../images/elemento5.png'; // Vinilo
 import elemento6 from '../images/elemento6.png'; // Guitarra eléctrica
 
@@ -45,13 +45,13 @@ export default function MirandaPatternBackground() {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
-      {/* Dark gradient base layer with subtle pink/purple ambient flares */}
+      {/* Dark gradient base layer with subtle light blue/cyan ambient flares */}
       <div className="absolute inset-0 bg-[#0d0d11]" />
 
       {/* Subtle glowing orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-pink-600/10 rounded-full blur-[100px]" />
-      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-fuchsia-600/10 rounded-full blur-[100px]" />
-      <div className="absolute top-2/3 left-1/3 w-80 h-80 bg-rose-500/10 rounded-full blur-[90px]" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-[100px]" />
+      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]" />
+      <div className="absolute top-2/3 left-1/3 w-80 h-80 bg-cyan-500/10 rounded-full blur-[90px]" />
 
       {/* Floating mini element stickers in pattern layout */}
       {patternItems.map((item, index) => {
