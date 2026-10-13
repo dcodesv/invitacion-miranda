@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Calendar, Clock, MapPin, Navigation, Sparkles, Heart, Volume2, VolumeX } from 'lucide-react';
+import { Calendar, Clock, MapPin, Navigation, Sparkles, Heart, Volume2, VolumeX, Gift, ExternalLink } from 'lucide-react';
 import { EVENT_DETAILS } from '../data/initialGuests';
 import CountdownTimer from './CountdownTimer';
 
@@ -241,13 +241,13 @@ export default function InvitationCard({ guest }) {
             </a>
 
             <a
-              href={EVENT_DETAILS.wazeUrl}
+              href={EVENT_DETAILS.wishlistUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="px-3 py-1.5 rounded-xl bg-[#FAF8F3] hover:bg-lemon-light text-[#4A6B52] border border-[#0F3885]/20 text-xs font-semibold flex items-center gap-1.5 shadow-xs transition-all"
             >
-              <Navigation className="w-3.5 h-3.5 text-[#4A6B52]" />
-              <span>Waze</span>
+              <Gift className="w-3.5 h-3.5 text-[#4A6B52]" />
+              <span>Wishlist</span>
             </a>
           </div>
 
@@ -266,6 +266,28 @@ export default function InvitationCard({ guest }) {
           <div className="font-script text-3xl text-[#4A6B52]">
             ¡Muchas Gracias!
           </div>
+        </div>
+
+        {/* Wishlist Section */}
+        <div className="my-6 py-4 px-4 bg-[#C59B27]/5 rounded-2xl border border-[#C59B27]/30 shadow-sm space-y-3 max-w-md mx-auto text-center">
+          <div className="flex items-center justify-center gap-2 text-[#C59B27]">
+            <Gift className="w-4 h-4" />
+            <span className="font-serif text-xs uppercase tracking-widest font-bold">MESA DE REGALOS · WISHLIST</span>
+            <Gift className="w-4 h-4" />
+          </div>
+          <p className="font-serif italic text-sm text-[#4A6B52] leading-relaxed">
+            "Tu presencia es nuestro mejor regalo. Si deseas tener un detalle con Miranda para sus 10 años, preparamos una lista de deseos en Amazon:"
+          </p>
+          <a
+            href={EVENT_DETAILS.wishlistUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#4A6B52] hover:bg-[#3A4E42] text-white text-xs sm:text-sm font-semibold shadow-md transition-all hover:scale-105 active:scale-95"
+          >
+            <Gift className="w-4 h-4" />
+            <span>Ver Wishlist en Amazon</span>
+            <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+          </a>
         </div>
 
         {/* Countdown Timer Section */}

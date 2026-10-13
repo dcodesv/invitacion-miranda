@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Navigation, Volume2, VolumeX, Sparkles, Heart, Phone, MessageCircle, Clock } from 'lucide-react';
+import { Calendar, MapPin, Navigation, Volume2, VolumeX, Sparkles, Heart, Phone, MessageCircle, Clock, Gift, ExternalLink, Copy, Check } from 'lucide-react';
 import { EVENT_DETAILS } from '../data/initialGuests';
 import mirandaBanner from '../images/miranda_lite.webp';
 import cartonDark from '../images/carton_dark.webp';
@@ -16,6 +16,7 @@ import { globalAudio } from '../services/audioManager';
 
 export default function DisruptiveInvitationCard({ guest }) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [copiedWishlist, setCopiedWishlist] = useState(false);
 
   // Countdown timer state
   const [timeLeft, setTimeLeft] = useState({
@@ -24,6 +25,16 @@ export default function DisruptiveInvitationCard({ guest }) {
     minutes: 0,
     seconds: 0,
   });
+
+  const handleCopyWishlist = async () => {
+    try {
+      await navigator.clipboard.writeText(EVENT_DETAILS.wishlistUrl);
+      setCopiedWishlist(true);
+      setTimeout(() => setCopiedWishlist(false), 2500);
+    } catch (err) {
+      console.error('Failed to copy wishlist link:', err);
+    }
+  };
 
   useEffect(() => {
     // Subscribe to unified audio manager state
@@ -339,15 +350,15 @@ export default function DisruptiveInvitationCard({ guest }) {
           </div>
         </div>
 
-        {/* Pill Action Buttons (Calendar & Google Maps) */}
-        <div className="grid grid-cols-2 gap-3 pt-1 max-w-sm mx-auto font-mansalva">
+        {/* Pill Action Buttons (Calendar, Google Maps & Wishlist) */}
+        <div className="grid grid-cols-3 gap-2 pt-1 max-w-md mx-auto font-mansalva">
           <a
             href={generateGoogleCalendarLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-2.5 rounded-2xl bg-rockBlue/20 hover:bg-rockBlue/30 text-rockBlue-300 border border-rockBlue/40 text-sm font-bold flex items-center justify-center gap-1.5 shadow-sm transition-all hover:scale-105 active:scale-95"
+            className="px-2 sm:px-3 py-2.5 rounded-2xl bg-rockBlue/20 hover:bg-rockBlue/30 text-rockBlue-300 border border-rockBlue/40 text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 shadow-sm transition-all hover:scale-105 active:scale-95"
           >
-            <Calendar className="w-4 h-4 text-rockBlue" />
+            <Calendar className="w-4 h-4 text-rockBlue shrink-0" />
             <span>CALENDAR</span>
           </a>
 
@@ -355,16 +366,76 @@ export default function DisruptiveInvitationCard({ guest }) {
             href={EVENT_DETAILS.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-2.5 rounded-2xl bg-rockBlue/20 hover:bg-rockBlue/30 text-rockBlue-300 border border-rockBlue/40 text-sm font-bold flex items-center justify-center gap-1.5 shadow-sm transition-all hover:scale-105 active:scale-95"
+            className="px-2 sm:px-3 py-2.5 rounded-2xl bg-rockBlue/20 hover:bg-rockBlue/30 text-rockBlue-300 border border-rockBlue/40 text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 shadow-sm transition-all hover:scale-105 active:scale-95"
           >
-            <MapPin className="w-4 h-4 text-rockBlue" />
-            <span>GOOGLE MAPS</span>
+            <MapPin className="w-4 h-4 text-rockBlue shrink-0" />
+            <span>MAPS</span>
+          </a>
+
+          <a
+            href="#wishlist-section"
+            className="px-2 sm:px-3 py-2.5 rounded-2xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-400/50 text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 shadow-sm transition-all hover:scale-105 active:scale-95"
+          >
+            <Gift className="w-4 h-4 text-amber-400 shrink-0" />
+            <span>WISHLIST</span>
           </a>
         </div>
 
       </div>
 
-      {/* 3. Countdown Section with Rock-Chic Paperclip Hanging Cards */}
+      {/* 3. Wishlist Section */}
+      <div
+        id="wishlist-section"
+        className="relative bg-zinc-900/90 rounded-3xl p-5 sm:p-6 border-2 border-rockBlue/40 shadow-xl shadow-black/40 my-4 text-center font-mansalva text-slate-100 overflow-hidden"
+      >
+        {/* Wishlist Ribbon */}
+        <div className="inline-flex items-center gap-1.5 text-rockBlue font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full shadow-md tracking-widest uppercase mb-3 border border-rockBlue/40 bg-rockBlue-950/40">
+          <Gift className="w-4 h-4 text-rockBlue animate-bounce" />
+          <span>AMAZON WISHLIST</span>
+          <Sparkles className="w-3.5 h-3.5 text-rockBlue" />
+        </div>
+
+        {/* Title */}
+        <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-wide drop-shadow-[0_2px_10px_rgba(112,197,248,0.5)] mb-3">
+          Miranda's Birthday Wishlist
+        </h3>
+
+        {/* Amazon Wishlist Box */}
+        <div className="bg-gradient-to-b from-rockBlue-950/40 to-black/60 border border-rockBlue/40 rounded-2xl p-4 sm:p-5 space-y-3 shadow-inner">
+          {/* Primary CTA: Open Amazon Wishlist */}
+          <a
+            href={EVENT_DETAILS.wishlistUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center justify-center gap-2.5 w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 text-zinc-950 font-sans font-extrabold text-sm sm:text-base shadow-lg shadow-amber-500/25 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] border border-amber-300/60"
+          >
+            <Gift className="w-5 h-5 text-zinc-950 transition-transform group-hover:rotate-12" />
+            <span className="tracking-wide">VIEW AMAZON WISHLIST</span>
+            <ExternalLink className="w-4 h-4 text-zinc-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </a>
+
+          {/* Secondary Action: Copy Link */}
+          <button
+            type="button"
+            onClick={handleCopyWishlist}
+            className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-rockBlue/15 hover:bg-rockBlue/25 text-rockBlue-200 border border-rockBlue/30 text-xs sm:text-sm font-sans font-semibold transition-all hover:scale-[1.01] active:scale-[0.98] cursor-pointer"
+          >
+            {copiedWishlist ? (
+              <>
+                <Check className="w-4 h-4 text-emerald-400" />
+                <span className="text-emerald-300 font-bold">Link copied to clipboard! 📋</span>
+              </>
+            ) : (
+              <>
+                <Copy className="w-4 h-4 text-rockBlue" />
+                <span>Copy Wishlist Link</span>
+              </>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* 4. Countdown Section with Rock-Chic Paperclip Hanging Cards */}
       <div className="relative mt-2 rounded-3xl overflow-hidden p-4 sm:p-6 font-mansalva mb-4 bg-zinc-900/60 border border-white/10">
 
         {/* Countdown Ribbon */}

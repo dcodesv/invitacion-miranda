@@ -51,5 +51,6 @@ export const EVENT_DETAILS = {
     phone: "281-224-9271",
     telLink: "tel:2812249271",
     whatsappLink: "https://wa.me/12812249271?text=Hi%20Andrea!%20Confirming%20attendance%20for%20Miranda%27s%2010th%20Birthday%20Celebration%20%F0%9F%8E%B8%F0%9F%A9%B5"
-  }
+  },
+  wishlistUrl: "https://www.amazon.com/hz/wishlist/ls/362YYQI3MUFNR?ref_=wl_share"
 };
